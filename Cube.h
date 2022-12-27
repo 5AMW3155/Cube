@@ -14,8 +14,6 @@ class Cube
     Cube();
     int rotate(int arr[8][8], int num);
     int deVoxel(int temp[3]);
-	void faceMove(int ord, int dist);
-	void edgeMove(int ord1, int ord2, int dist1, int dist2);
   private:
 };
 

@@ -9,7 +9,7 @@
 
 Cube::Cube()
 {
-	
+
 }
 
 int Cube::rotate (int arr[8][8], int num) //This function is used to rotate arrays by n turns. Used in deVoxel function
@@ -77,26 +77,3 @@ int Cube::deVoxel (int temp[3]) //This function is used to turn XYZ coordinates 
     }
   return pix;
 };
-
-void Cube::faceMove(int ord, int dist) {
-  int pix = deVoxel(voxel);
-  leds[pix] = CRGB::Black;
-
-  voxel[ord] = voxel[ord] + dist;
-  pix = deVoxel(voxel);
-  leds[pix] = CRGB::White;
-  FastLED.show();
-  delay(dVal);
-}
-
-void Cube::edgeMove(int ord1, int ord2, int dist1, int dist2) {
-  int pix = deVoxel(voxel);
-  leds[pix] = CRGB::Black;
-
-  voxel[ord1] = voxel[ord1] + dist1;
-  voxel[ord2] = voxel[ord2] + dist2;
-  pix = deVoxel(voxel);
-  leds[pix] = CRGB::White;
-  FastLED.show();
-  delay(dVal);
-}
