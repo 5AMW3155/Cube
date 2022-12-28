@@ -2,9 +2,9 @@
 #include "FastLED.h"
 #include "Cube.h"
 
-Cube Cube;
+Cube Cube; // Initilize Cube lib
 
-MPU6050 accelgyro;
+MPU6050 accelgyro; // Initilize IMU
 
 int16_t ax, ay, az;
 int16_t gx, gy, gz;
@@ -14,7 +14,7 @@ int16_t gx, gy, gz;
 #define BRIGHTNESS  20
 #define LED_TYPE    WS2812
 #define COLOR_ORDER GRB
-CRGB leds[NUM_LEDS];
+CRGB leds[NUM_LEDS]; // Initilize LED arrays
 
 int voxel[3] = {9,4,4};
 int dVal = 100;
