@@ -47,32 +47,34 @@ int Cube::deVoxel (int temp[3]) //This function is used to turn XYZ coordinates 
     {48, 49, 50, 51, 52, 53, 54, 55},
     {56, 57, 58, 59, 60, 61, 62, 63}
   };
-  if (x == 0)
-    {
-      pix = arr[z-1][y-1] + 0*64;
-    };
-  if (x == 9)
-    {
-      arr[8][8] = rotate(arr,2);
-      pix = arr[y-1][z-1] + 3*64;
-    };
-  if (y == 0)
+  if (x == 9) //Fixed
     {
       arr[8][8] = rotate(arr,3);
-      pix = arr[x-1][z-1] + 5*64;
+      pix = arr[y-1][z-1] + 0*64;
     };
-  if (y == 9)
+  if (x == 0) //Fixed
     {
       arr[8][8] = rotate(arr,3);
-      pix = arr[z-1][x-1] + 2*64;
+      pix = arr[z-1][y-1] + 3*64;
     };
-  if (z == 0)
+  if (y == 9) //Fixed
+    {
+      // arr[8][8] = rotate(arr,0);
+      pix = arr[z-1][x-1] + 5*64;
+    };
+  if (y == 0) //Fixed
     {
       arr[8][8] = rotate(arr,2);
+      pix = arr[x-1][z-1] + 2*64;
+    };
+  if (z == 0) //Fixed
+    {
+      // arr[8][8] = rotate(arr,2);
       pix = arr[y-1][x-1] + 4*64;
     };
-  if (z == 9)
+  if (z == 9) //Fixed
     {
+      arr[8][8] = rotate(arr,2);
       pix = arr[x-1][y-1] + 1*64;
     }
   return pix;
